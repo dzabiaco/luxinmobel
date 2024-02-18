@@ -60,7 +60,6 @@ export default function Contacts(){
                 }, 3000);
             }
 
-            console.log(response);
         }
 
     }

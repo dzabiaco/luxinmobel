@@ -1,4 +1,6 @@
 import Product from "@/components/PopularProducts/Product";
+import classes from "@/components/HeaderContent/HeaderContent.module.css";
+import Link from "next/link";
 
 
 export default function PopularProducts(){
@@ -8,11 +10,6 @@ export default function PopularProducts(){
             <header>
                 <div className="container">
                     <h2 className="title">Popular products</h2>
-                    <div className="text">
-                        <p>
-                            Find your perfect match <a href="products-grid.html" className="btn btn-main">View all</a>
-                        </p>
-                    </div>
                 </div>
             </header>
 
@@ -26,6 +23,10 @@ export default function PopularProducts(){
                     <Product/>
                     <Product/>
                     <Product/>
+                </div>
+
+                <div className="row">
+                    <Link href="/gallery" className={`${classes.slideButton} mx-auto`}>See portfolio</Link>
                 </div>
 
             </div>

@@ -146,7 +146,7 @@
             };
           }
 
-          // Since this is an estimate, we calculate how far over the width we went with the new value.
+          // Since this is an estimate, we calculator how far over the width we went with the new value.
           // If this is word-spacing (our last resort guess) and the over is less than the under, we keep the higher value.
           // Otherwise, we revert to the underestimate.
           var under = maxWidth - previousWidth,

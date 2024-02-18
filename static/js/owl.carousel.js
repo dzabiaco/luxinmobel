@@ -13,7 +13,7 @@
  * @todo prevent animationend bubling
  * @todo itemsScaleUp
  * @todo Test Zepto
- * @todo stagePadding calculate wrong active classes
+ * @todo stagePadding calculator wrong active classes
  */
 ; (function ($, window, document, undefined) {
 
@@ -1484,7 +1484,7 @@
     };
 
 	/**
-	 * Operators to calculate right-to-left and left-to-right.
+	 * Operators to calculator right-to-left and left-to-right.
 	 * @protected
 	 * @param {Number} [a] - The left side operand.
 	 * @param {String} [o] - The operator.
@@ -2605,7 +2605,7 @@
  * @author Bartosz Wojciechowski
  * @author Artus Kolanowski
  * @author David Deutsch
- * @author Tom De Caluwé
+ * @author Tom De Caluwï¿½
  * @license The MIT License (MIT)
  */
 ; (function ($, window, document, undefined) {

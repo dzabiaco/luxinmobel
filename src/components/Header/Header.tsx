@@ -69,7 +69,7 @@ export default function Header(){
                                 <Link href="/gallery">Gallery</Link>
                             </li>
                             <li>
-                                <Link href="#">Calculator</Link>
+                                <Link href="/calculator">Calculator</Link>
                             </li>
                             <li>
                                 <Link href="/contacts">Contacts</Link>
