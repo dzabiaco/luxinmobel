@@ -10,14 +10,14 @@ export default async function handler(
     const email = req.body.email;
 
     try {
-        const newSubscription = await prisma.EmailSubcription.create({
+        const newSubscription = await prisma.emailSubcription.create({
             data: {
                 email: email
             }
         });
         res.status(200).json({ email: email});
     }
-    catch (e:Error){
+    catch (e:any){
         res.status(500).json({ email: email});
     }
 

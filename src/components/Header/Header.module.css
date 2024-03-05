@@ -1,3 +1,8 @@
 .iconOpen {
     line-height: 55px;
 }
+
+.active{
+    background-color: #3c5570;
+    color: #fff;
+}

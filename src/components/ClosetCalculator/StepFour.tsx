@@ -14,7 +14,7 @@ export default function StepFour(){
     const [type, setType] = useState("");
     const [text, setText] = useState("");
 
-    function handleCloset(event){
+    async function handleCloset(event:any){
         event.preventDefault();
 
         if(+width === 0 || +height === 0 || +depth === 0 ){
@@ -24,14 +24,32 @@ export default function StepFour(){
             return;
         }
 
-        const final = {
-            address, phone, width, height, depth, doorStyle, drawers
+        const closetData = {
+            address,
+            phone,
+            width,
+            height,
+            depth,
+            doorStyle: doorStyle || "simple",
+            drawers: drawers === false ? "no need" : drawers
         }
         setType("success");
         setText("We will contact you. Please verify your email");
         setShowAlert(true);
 
-        console.log(final);
+        console.log(closetData);
+        try {
+            await fetch(`/api/send-closet-email`, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ closetData })
+            });
+        }
+        catch(e){
+            console.log(e);
+        }
     }
 
     return (
@@ -44,7 +62,7 @@ export default function StepFour(){
                 <div className="row">
                     <div className="col-6">
                         <div className="form-group flex justify-content-center align-items-center">
-                            <FontAwesomeIcon className="icon " icon={faEnvelope} className={classes.icon}/>
+                            <FontAwesomeIcon icon={faEnvelope} className={classes.icon}/>
                             <input type="email" step="0.10" className="form-control"
                                    placeholder="Email" required
                                    onBlur={(event)=> setAddress(event.target.value)}/>
@@ -53,7 +71,7 @@ export default function StepFour(){
 
                     <div className="col-6">
                         <div className="form-group flex justify-content-center align-items-center">
-                            <FontAwesomeIcon className="icon " icon={faPhone} className={classes.icon}/>
+                            <FontAwesomeIcon icon={faPhone} className={classes.icon}/>
                             <input type="phone" step="0.10" className="form-control"
                                    placeholder="Phone" required
                                    onBlur={(event)=> setPhone(event.target.value)}/>

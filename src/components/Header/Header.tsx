@@ -5,9 +5,16 @@ import classes from "./Header.module.css"
 import Image from "next/image";
 import {useEffect, useState} from "react";
 import $ from "jquery";
+import {useRouter} from "next/router";
 
 
 export default function Header(){
+    const router =  useRouter();
+
+    const isActiveLink = (href:string) => {
+        return router.pathname === href;
+    }
+
     useEffect(()=>{
 
         const objSearch = $('.search-wrapper'),
@@ -63,16 +70,16 @@ export default function Header(){
                         </Link>
                         <ul className="ml-3">
                             <li>
-                                <Link href="/">Home</Link>
+                                <Link href="/" className={isActiveLink('/') ? classes.active : ''}>Home</Link>
                             </li>
                             <li>
-                                <Link href="/gallery">Gallery</Link>
+                                <Link href="/gallery" className={isActiveLink('/gallery') ? classes.active : ''}>Gallery</Link>
                             </li>
                             <li>
-                                <Link href="/calculator">Calculator</Link>
+                                <Link href="/calculator" className={isActiveLink('/calculator') ? classes.active : ''}>Calculator</Link>
                             </li>
                             <li>
-                                <Link href="/contacts">Contacts</Link>
+                                <Link href="/contacts" className={isActiveLink('/contacts') ? classes.active : ''}>Contacts</Link>
                             </li>
                         </ul>
                     </div>

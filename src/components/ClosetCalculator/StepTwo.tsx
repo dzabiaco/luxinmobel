@@ -3,7 +3,6 @@ import Image from "next/image";
 import ClosetContext from "@/CalculatorContext/CalculatorContext";
 
 export default function StepTwo() {
-    const [selectedOption, setSelectedOption] = useState('coupe');
 
     const { doorStyle, setDoorStyle} = useContext(ClosetContext);
 
@@ -18,6 +17,7 @@ export default function StepTwo() {
                             <Image src="/static/images/icons/closet/coupe.png" alt="Coupe" width="75" height="75"/>
                             <span className="checkbox" style={{marginRight: 10}}>
                                             <input type="radio" id="matId3" name="coupe" value="coupe"
+                                                   defaultChecked
                                                    checked={doorStyle === "coupe"}
                                                    onChange={(event)=>setDoorStyle(event.target.value)}/>
                                             <label htmlFor="matId3">Coupe</label>

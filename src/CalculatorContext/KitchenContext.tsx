@@ -1,18 +1,20 @@
 import { createContext, useState } from 'react';
 
-const ClosetContext = createContext({
-    width: 2.0,
-    height: 2.0,
-    depth: 1.0,
-    doorStyle: 'coupe',
-    drawers: 'need',
+const KitchenContext = createContext({
+    kitchenType: 'straight',
+    kitchenFloors: '',
+    kitchenStyle: '',
     address: '',
     phone: '',
+
     setWidth: (width: any) => {},
     setHeight: (height: any) => {},
     setDepth: (depth:any) => {},
-    setDoorStyle: (value:any) => {},
-    setDrawers: (value:any)=> {},
+
+
+    setKitchenType: (value: any) => {},
+    setKitchenFloors: (value: any) => {},
+    setKitchenStyle: (value: any) => {},
     setAddress: (value:any) => {},
     setPhone: (value:any) => {}
 
@@ -23,8 +25,12 @@ export function ClosetContextProvider(props:any){
     const [width, setWidth] = useState<number>(0);
     const [height, setHeight] = useState<number>(0);
     const [depth, setDepth] = useState<number>(0);
-    const [doorStyle, setDoorStyle] = useState<string>('');
-    const [drawers, setDrawers] = useState<boolean>(false);
+
+    const [kitchenType, setKitchenType] = useState<string>('');
+    const [kitchenFloors, setKitchenFloors] = useState<string>('');
+    const [kitchenStyle, setKitchenStyle] = useState<string>('');
+
+
     const [address, setAddress] = useState<string>('');
     const [phone, setPhone] = useState<string>('');
 
@@ -40,12 +46,19 @@ export function ClosetContextProvider(props:any){
         setDepth(depth);
     }
 
-    function setDoorStyleHandler(value:any){
-        setDoorStyle(value);
+
+
+
+    function setKitchenTypeHandler(value:any){
+        setKitchenType(value);
     }
 
-    function setDrawersHandler(value:any){
-        setDrawers(value);
+    function setKitchenFloorsHandler(value:any){
+        setKitchenFloors(value);
+    }
+
+    function setKitchenStyleHandler(value:any){
+        setKitchenStyle(value);
     }
 
     function setAddressHandler(value:any){
@@ -61,22 +74,27 @@ export function ClosetContextProvider(props:any){
         width,
         height,
         depth,
-        doorStyle,
-        drawers,
+
+        kitchenType,
+        kitchenFloors,
+        kitchenStyle,
         address,
         phone,
         setWidth: setWidthHandler,
         setHeight: setHeightHandler,
         setDepth: setDepthHandler,
-        setDoorStyle: setDoorStyleHandler,
-        setDrawers: setDrawersHandler,
+
+        setKitchenType: setKitchenTypeHandler,
+        setKitchenFloors: setKitchenFloorsHandler,
+        setKitchenStyle: setKitchenStyleHandler,
+
         setAddress: setAddressHandler,
         setPhone: setPhoneHandler
     };
 
-    return <ClosetContext.Provider value={context as any}>
+    return <KitchenContext.Provider value={context as any}>
         {props.children}
-    </ClosetContext.Provider>
+    </KitchenContext.Provider>
 }
 
-export default ClosetContext;
+export default KitchenContext;

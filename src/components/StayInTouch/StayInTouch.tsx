@@ -9,13 +9,13 @@ export default function StayInTouch(){
 
     const emailRef = useRef<HTMLInputElement | null>(null);
 
-    function validateEmail(email) {
+    function validateEmail(email:string) {
         const re = /\S+@\S+\.\S+/;
         return re.test(email);
     }
 
     async function subscribe(){
-        const email = emailRef.current?.value;
+        const email = emailRef.current?.value || '';
 
         if(!validateEmail(email) || error){
             setSuccess(false);

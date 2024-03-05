@@ -26,11 +26,12 @@ export default function StepOne() {
 
     return (
         <Fragment>
-            <p>Choose Sizes</p>
+            <h3>Choose Sizes</h3>
             <div className="container mt-10">
                 <div className="contact-form clearfix">
                     <div className="row">
                         <div className="col-4">
+                            <h4>Width</h4>
                             <div className="form-group flex justify-content-center align-items-center">
                                 <Image src="/static/images/icons/db-width.png" alt="Width" width="75" height="75"/>
                                 <input type="number" step="0.10" className="form-control"
@@ -40,6 +41,7 @@ export default function StepOne() {
                         </div>
 
                         <div className="col-4">
+                            <h4>Height</h4>
                             <div className="form-group flex justify-content-center align-items-center">
                                 <Image src="/static/images/icons/db-height.png" alt="Height" width="75" height="75"/>
                                 <input type="number" step="0.10" className="form-control"
@@ -49,6 +51,7 @@ export default function StepOne() {
                         </div>
 
                         <div className="col-4">
+                            <h4>Depth</h4>
                             <div className="form-group flex justify-content-center align-items-center">
                                 <Image src="/static/images/icons/db-height.png" alt="Depth" width="75" height="75"/>
                                 <input type="number" step="0.10" className="form-control"
